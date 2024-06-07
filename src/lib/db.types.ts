@@ -5,7 +5,8 @@ export type ingredient = {
   id: identifier
   name: food_name
   default_size: string
-  store_id: identifier
+  stores: identifier[]
+  pictures: identifier[]
 }
 export type ingredient_used = {
   ingredient: ingredient
@@ -46,6 +47,7 @@ export type recipe = {
   required_utensils: kitchen_utensil[]
   optional_utensils: kitchen_utensil[]
   portions: number
+  pictures: Blob[]
 }
 
 
