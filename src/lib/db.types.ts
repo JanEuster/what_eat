@@ -6,11 +6,13 @@ export type ingredient = {
   name: food_name
   default_size: string
   stores: identifier[]
-  pictures: identifier[]
+  pictures: Buffer[]
 }
 export type ingredient_used = {
   ingredient: ingredient
   amount: number
+  // recipe_id: identifier
+  // ingredient_id: identifier
 }
 export type ingredient_store = {
   id: identifier
@@ -19,11 +21,13 @@ export type ingredient_store = {
 export type kitchen_utensil = {
   id: identifier
   name: food_name
-  function: identifier[]
+  // functions: identifier[]
+  is_required: boolean
 }
 export type kitchen_utensil_group = {
   id: identifier
   name: food_name
+  parent_group: identifier
   utensils: kitchen_utensil[]
   subgroup: kitchen_utensil_group
 }
@@ -32,10 +36,11 @@ export type recipe_category = {
   id: identifier
   name: food_name
 }
+
 export type recipe = {
   id: identifier
   name: food_name
-  category: recipe_category
+  categories: recipe_category[]
   ingredients: ingredient_used[]
   preparation: string
   time_prepping_ingredients: number
@@ -44,17 +49,18 @@ export type recipe = {
   time_cooking: number
   time_cleaning: number
   ingredient_stores: ingredient_store[]
-  required_utensils: kitchen_utensil[]
-  optional_utensils: kitchen_utensil[]
+  utensils: kitchen_utensil[]
   portions: number
-  pictures: Blob[]
+  pictures: Buffer[]
 }
 
+export type recipe_tree = {[recipe_id: identifier]: recipe_tree}
 
 export type food = {
   id: identifier
   name: food_name
-  subfood: food[]
+  // subfood: identifier[]
   // variations: food[]
-  prepartion: string
+  description: string
+  pictures: Buffer[]
 }

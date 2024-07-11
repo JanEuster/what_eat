@@ -34,7 +34,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@types/better-sqlite3": "^7.6.10",
 		"@types/node": "^20.14.0",
-		"sqlite3": "^5.1.7"
-	}
+		"better-sqlite3": "^11.0.0"
+	},
+	"packageManager": "pnpm@9.1.4+sha1.2432063d815cfa88fd9fef1d85a445e3f609851d"
 }

@@ -1,6 +1,7 @@
 {
 	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
+		"module": "ESNext",
 		"allowJs": true,
 		"checkJs": true,
 		"esModuleInterop": true,
@@ -8,6 +9,8 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
 		"strict": true,
 		"moduleResolution": "bundler",
 		"types": [

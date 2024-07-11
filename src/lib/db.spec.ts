@@ -70,8 +70,13 @@ test("insert into ingredients", async ({onTestFinished}) => {
   onTestFinished(() => db.close())
   setTimeout(async () => {
   }, 5000)
-  const ingredient = create_ingredient("Würstchen mit Speck umwickelt", "1,5kg")
-  const err = await db_insert_ingredient(db, ingredient)
+
+
+  // ingredients
+  const ingredient1 = create_ingredient("Würstchen mit Speck umwickelt", "200g")
+  const ingredient2 = create_ingredient("Kartoffeln", "1,5kg")
+  await db_insert_ingredient(db, ingredient1)
+  await db_insert_ingredient(db, ingredient2)
   setTimeout(async () => {
   }, 5000)
 
